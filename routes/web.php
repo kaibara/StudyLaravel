@@ -48,12 +48,12 @@ Route::post('/admin/user/delete_check','User\DeleteCheckController@delete_check'
 Route::get('/admin/user/delete_finish','AdminController@admin');
 Route::post('/admin/user/delete_finish','User\DeleteFinishController@delete_finish');
 
-// Route::get('/user/entry','UserEntryController@getindex');
-// Route::post('/user/entry','UserEntryController@postindex');
-// Route::get('/user/entry_check','UserEntryCheckController@getindex');
-// Route::post('/user/entry_check','UserEntryCheckController@postindex');
-// Route::get('/user/entry_finish','UserEntryFinishController@getindex');
-// Route::post('/user/entry_finish','UserEntryFinishController@postindex');
+Route::get('/admin/user/entry','User\EntryController@entry');
+Route::post('/admin/user/entry','User\EntryController@return_entry');
+Route::get('/admin/user/entry_check','User\EntryController@entry');
+Route::post('/admin/user/entry_check','User\EntryCheckController@entry_check');
+Route::get('/admin/user/entry_finish','User\EntryController@entry');
+Route::post('/admin/user/entry_finish','User\EntryFinishController@entry_finish');
 
 // //管理画面(職種)
 // Route::get('/work/entry','WorkEntryController@getindex');
