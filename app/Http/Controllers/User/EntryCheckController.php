@@ -7,20 +7,21 @@ use Illuminate\Http\Request;
 
 class EntryCheckController extends Controller
 {
-    public function edit_check(Request $request)
+    public function entry_check(Request $request)
     {
-    	$name = $request -> input('user_name');
-    	$mail = $request -> input('user_mail');
-    	$pass = $request -> input('user_pass');
-    	$work = $request -> input('user_work_id');
-    	$comment = $request -> input('user_comment');
-    	$data = array(
-    		'user_name' => $name,
-    		'user_mail' => $mail,
-    		'user_pass' => $pass,
-    		'user_work_id' => $work,
-    		'user_comment' => $comment
+    	$entry_name = $request -> input('entry_name');
+    	$entry_email = $request -> input('entry_email');
+    	$entry_works_id = $request -> input('entry_works_id');
+    	$entry_comment = $request -> input('entry_comment');
+    	$entry_delete_flag = $request -> input('entry_delete_flag');
+    	$entry_data = array(
+    		'entry_name' => $entry_name,
+    		'entry_email' => $entry_email,
+    		'entry_works_id' => $entry_works_id,
+    		'entry_comment' => $entry_comment,
+    		'entry_delete_flag' => $entry_delete_flag
     	);
-        return view('/user/entry_check',['title' => '新規ユーザー登録確認画面', 'data' => $data]);
+		$pass = bin2hex(random_bytes(4));
+        return view('/user/entry_check',['Data' => $entry_data, 'Pass' => $pass]);
     }
 }

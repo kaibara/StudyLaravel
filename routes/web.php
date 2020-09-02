@@ -49,7 +49,7 @@ Route::get('/admin/user/delete_finish','AdminController@admin');
 Route::post('/admin/user/delete_finish','User\DeleteFinishController@delete_finish');
 
 Route::get('/admin/user/entry','User\EntryController@entry');
-Route::post('/admin/user/entry','User\EntryController@entry_return');
+Route::post('/admin/user/entry','User\EntryController@return_entry');
 Route::get('/admin/user/entry_check','User\EntryController@entry');
 Route::post('/admin/user/entry_check','User\EntryCheckController@entry_check');
 Route::get('/admin/user/entry_finish','User\EntryController@entry');

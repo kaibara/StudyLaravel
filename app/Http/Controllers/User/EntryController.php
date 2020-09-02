@@ -9,23 +9,23 @@ class EntryController extends Controller
 {
     public function entry()
     {
-		$pass = random_bytes(8);
-        return view('/user/entry',['Pass' => $pass]);
+        return view('/user/entry');
     }
 
     public function return_entry(Request $request)
     {
     	$entry_name = $request -> input('entry_name');
-    	$entry_mail = $request -> input('entry_mail');
+    	$entry_email = $request -> input('entry_email');
     	$entry_works_id = $request -> input('entry_works_id');
-    	$entry_entry_comment = $request -> input('entry_comment');
+    	$entry_comment = $request -> input('entry_comment');
+    	$entry_delete_flag = $request -> input('entry_delete_flag');
     	$entry_data = array(
     		'entry_name' => $entry_name,
-    		'entry_mail' => $entry_mail,
-    		'entry_works_id' => $entry_work,
-    		'entry_comment' => $entry_comment
+    		'entry_email' => $entry_email,
+    		'entry_works_id' => $entry_works_id,
+    		'entry_comment' => $entry_comment,
+    		'entry_delete_flag' => $entry_delete_flag
     	);
-		$pass = random_bytes(8);
-        return view('/user/entry',['Pass' => $pass, 'Data' => $entry_data]);
+        return view('/user/entry',['Data' => $entry_data]);
     }
 }

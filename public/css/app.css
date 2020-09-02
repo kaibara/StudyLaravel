@@ -10988,3 +10988,7 @@ table{
 .to_home{
   margin: 10px 0px;
 }
+
+.entry{
+  border: 2px solid #636b6f;
+}
