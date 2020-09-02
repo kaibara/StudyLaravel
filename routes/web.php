@@ -53,7 +53,7 @@ Route::post('/admin/user/entry','User\EntryController@return_entry');
 Route::get('/admin/user/entry_check','User\EntryController@entry');
 Route::post('/admin/user/entry_check','User\EntryCheckController@entry_check');
 Route::get('/admin/user/entry_finish','User\EntryController@entry');
-Route::post('/admin/user/entry_finish','User\EntryController@entry_finish');
+Route::post('/admin/user/entry_finish','User\EntryFinishController@entry_finish');
 
 // //管理画面(職種)
 // Route::get('/work/entry','WorkEntryController@getindex');
