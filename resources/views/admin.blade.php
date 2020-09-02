@@ -46,8 +46,8 @@
                                 </td>
                                 @if ($Key['delete_flag'] == 0)
                                 <td>
-                                    <form action="admin/user/edit" method="POST">
-                                        <input type="hidden" value="{{ $Key['id'] }}" name="edit_id">
+                                    <form action="admin/user/delete_check" method="POST">
+                                        <input type="hidden" value="{{ $Key['id'] }}" name="delete_id">
                                         <input type="submit" value="削除する">
                                         @csrf
                                     </form>

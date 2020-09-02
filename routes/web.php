@@ -43,40 +43,17 @@ Route::post('/admin/user/edit_check','User\EditCheckController@check');
 Route::get('/admin/user/edit_finish','User\EditController@edit');
 Route::post('/admin/user/edit_finish','User\EditFinishController@finish');
 
+Route::get('/admin/user/delete_check','AdminController@admin');
+Route::post('/admin/user/delete_check','User\DeleteCheckController@delete_check');
+Route::get('/admin/user/delete_finish','AdminController@admin');
+Route::post('/admin/user/delete_finish','User\DeleteFinishController@delete_finish');
+
 // Route::get('/user/entry','UserEntryController@getindex');
 // Route::post('/user/entry','UserEntryController@postindex');
 // Route::get('/user/entry_check','UserEntryCheckController@getindex');
 // Route::post('/user/entry_check','UserEntryCheckController@postindex');
 // Route::get('/user/entry_finish','UserEntryFinishController@getindex');
 // Route::post('/user/entry_finish','UserEntryFinishController@postindex');
-
-
-
-// Route::get('/detail','DetailController@getindex');
-// Route::post('/detail','DetailController@postindex');
-
-// Route::get('/login','LoginController@getindex');
-// Route::post('/login','LoginController@postindex');
-
-// //ユーザー画面(ログイン)
-// Route::get('/mypage','MypageController@getindex');
-// Route::post('/mypage','MypageController@postindex');
-
-// Route::get('/user/edit','UserEditController@getindex');
-// Route::post('/user/edit','UserEditController@postindex');
-// Route::get('/user/edit_check','UserEditCheckController@getindex');
-// Route::post('/user/edit_check','UserEditCheckController@postindex');
-// Route::get('/user/edit_finish','UserEditFinishController@getindex');
-// Route::post('/user/edit_finish','UserEditFinishController@postindex');
-
-// //管理画面
-// Route::get('/admin','AdminController@getindex');
-
-// //管理画面(ユーザー)
-// Route::get('/delete','UserDeleteController@getindex');
-// Route::post('/delete','UserDeleteController@postindex');
-// Route::get('/delete_finish','UserDeleteFinishController@getindex');
-// Route::post('/delete_finish','UserDeleteFinishController@postindex');
 
 // //管理画面(職種)
 // Route::get('/work/entry','WorkEntryController@getindex');
