@@ -15,7 +15,7 @@
                         </div>
                     @endif
                     <div class="links edit_table">
-                        <a href="">新規ユーザー登録</a>
+                        <a href="admin/user/entry">新規ユーザー登録</a>
                         <table>
                             <tr>
                                 <th>ID</th>
