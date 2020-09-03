@@ -10970,11 +10970,16 @@ table{
   text-align: center;
 }
 
-.edit_table{
+.admin_table{
   height: 300px;
   overflow: scroll;
 }
-.edit_table > td > input{
+
+.edit_table{
+  overflow: scroll;
+}
+
+.admin_table, .edit_table > td > input{
   padding: 0px;
 }
 

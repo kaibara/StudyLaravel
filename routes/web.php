@@ -62,12 +62,13 @@ Route::post('/admin/works/entry_check','Works\EntryCheckController@entry_check')
 Route::get('/admin/works/entry','Works\EntryController@entry');
 Route::post('/admin/works/entry_finish','Works\EntryFinishController@entry_finish');
 
-// Route::get('/work/edit','WorkEditController@getindex');
-// Route::post('/work/edit','WorkEditController@postindex');
-// Route::get('/work/edit_check','WorkEditCheckController@getindex');
-// Route::post('/work/edit_check','WorkEditCheckController@postindex');
-// Route::get('/work/edit_finish','WorkEditFinishController@getindex');
-// Route::post('/work/edit_finish','WorkEditFinishController@postindex');
+Route::get('/admin/works/edit','AdminController@admin');
+Route::post('/admin/works/edit','Works\EditController@edit');
+Route::post('/admin/works/edit_return','Works\EditController@return_edit');
+Route::get('/admin/works/edit_check','AdminController@admin');
+Route::post('/admin/works/edit_check','Works\EditCheckController@edit_check');
+Route::get('/admin/works/edit_finish','AdminController@admin');
+Route::post('/admin/works/edit_finish','Works\EditFinishController@edit_finish');
 
 Route::get('/admin/works/delete_check','AdminController@admin');
 Route::post('/admin/works/delete_check','Works\DeleteCheckController@delete_check');

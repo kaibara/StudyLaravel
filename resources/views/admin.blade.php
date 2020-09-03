@@ -14,7 +14,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div class="links edit_table">
+                    <div class="links admin_table">
                         <a href="admin/user/entry" class="entry">新規ユーザー登録</a>
                         <table>
                             <tr>
@@ -71,7 +71,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div class="links edit_table">
+                    <div class="links admin_table">
                         <a href="admin/works/entry" class="entry">新規職種登録</a>
                         <table>
                             <tr>
