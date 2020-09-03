@@ -1,18 +1,48 @@
-@extends('templeates.page_template')
-@section('contents')
-	<h3>新規登録したい職種名を入力してください。</h3>
-	<form method="post" action="entry_check">
-		<p>職種名:</p>
-		@if(isset($data))
-			<input type="text" name="work_name" value="{{ $data }}">
-		@else
-			<input type="text" name="work_name">
-		@endif
-		<input type="submit" value="確認画面へ">
-		{{ csrf_field() }}
-	</form>
-	<br>
-	<div class="button">
-		<input type="button" value="戻る" onclick="history.back()">
-	</div>
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                   　登録したい職種名を入力してください。
+                </div>
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    <div class="edit_table">
+                        <form method="post" action="entry_check">
+                            <table>
+                                <tr>
+                                    <th>WORKS_NAME</th>
+                                    <th>DELETE_FLAG(0=表示, 1=非表示)</th>
+                                </tr>
+								@if(isset($Data))
+                                <tr>
+                                    <td><input type="text" value="{{ $Data['entry_works_name'] }}" name="entry_works_name"></td>
+                                    <td><input type="text" value="{{ $Data['entry_delete_flag'] }}" name="entry_delete_flag"></td>
+                                @else
+                                <tr>
+                                    <td><input type="text" name="entry_works_name"></td>
+                                    <td><input type="text" name="entry_delete_flag"></td>
+                                @endif
+                                 	<td><input type="submit" value="確認画面へ"></td>
+                                </tr>
+                            </table>
+                            @csrf
+                        </form>
+                    </div>
+                    <div>
+                        <input type="button" value="戻る" onclick="location.href='/admin'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	
 @endsection

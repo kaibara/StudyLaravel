@@ -72,7 +72,7 @@
                         </div>
                     @endif
                     <div class="links edit_table">
-                        <a href="admin/user/entry" class="entry">新規職種登録</a>
+                        <a href="admin/works/entry" class="entry">新規職種登録</a>
                         <table>
                             <tr>
                                 <th>WORKS_ID</th>

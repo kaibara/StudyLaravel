@@ -55,14 +55,12 @@ Route::post('/admin/user/delete_check','User\DeleteCheckController@delete_check'
 Route::get('/admin/user/delete_finish','AdminController@admin');
 Route::post('/admin/user/delete_finish','User\DeleteFinishController@delete_finish');
 
-
-// //管理画面(職種)
-// Route::get('/work/entry','WorkEntryController@getindex');
-// Route::post('/work/entry','WorkEntryController@postindex');
-// Route::get('/work/entry_check','WorkEntryCheckController@getindex');
-// Route::post('/work/entry_check','WorkEntryCheckController@postindex');
-// Route::get('/work/entry_finish','WorkEntryFinishController@getindex');
-// Route::post('/work/entry_finish','WorkEntryFinishController@postindex');
+Route::get('/admin/works/entry','Works\EntryController@entry');
+Route::post('/admin/works/entry','Works\EntryController@return_entry');
+Route::get('/admin/works/entry','Works\EntryController@entry');
+Route::post('/admin/works/entry_check','Works\EntryCheckController@entry_check');
+Route::get('/admin/works/entry','Works\EntryController@entry');
+Route::post('/admin/works/entry_finish','Works\EntryFinishController@entry_finish');
 
 // Route::get('/work/edit','WorkEditController@getindex');
 // Route::post('/work/edit','WorkEditController@postindex');

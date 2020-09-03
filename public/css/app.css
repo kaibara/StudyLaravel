@@ -10961,12 +10961,17 @@ html, body{
   margin-bottom: 30px;
 }
 
+.entry{
+  border: 2px solid #636b6f;
+}
+
 table{
   border-spacing: 10px 5px;
   text-align: center;
 }
 
 .edit_table{
+  height: 300px;
   overflow: scroll;
 }
 .edit_table > td > input{
@@ -10987,8 +10992,4 @@ table{
 
 .to_home{
   margin: 10px 0px;
-}
-
-.entry{
-  border: 2px solid #636b6f;
 }
