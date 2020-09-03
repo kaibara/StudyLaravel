@@ -71,10 +71,42 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div class="links">
-                        <a href="">職種登録</a>
-                        <a href="">職種編集</a>
-                        <a href="">職種削除
+                    <div class="links edit_table">
+                        <a href="admin/user/entry" class="entry">新規職種登録</a>
+                        <table>
+                            <tr>
+                                <th>WORKS_ID</th>
+                                <th>WORKS_NAME</th>
+                                <th>CREATED_AT</th>
+                                <th>UPDATED_AT</th>
+                                <th>DELETE_FLAG(0=表示, 1=非表示)</th>
+                            </tr>
+                            @foreach($Work as $Key)
+                            <tr>
+                                <td>{{ $Key['works_id'] }}</td>
+                                <td>{{ $Key['works_name'] }}</td>
+                                <td>{{ $Key['created_at'] }}</td>
+                                <td>{{ $Key['updated_at'] }}</td>
+                                <td>{{ $Key['delete_flag'] }}</td>
+                                <td>
+                                    <form action="admin/works/edit" method="POST">
+                                        <input type="hidden" value="{{ $Key['works_id'] }}" name="edit_works_id">
+                                        <input type="submit" value="編集する">
+                                        @csrf
+                                    </form>
+                                </td>
+                                @if ($Key['delete_flag'] == 0)
+                                <td>
+                                    <form action="admin/works/delete_check" method="POST">
+                                        <input type="hidden" value="{{ $Key['works_id'] }}" name="delete_works_id">
+                                        <input type="submit" value="削除する">
+                                        @csrf
+                                    </form>
+                                </td>
+                                @endif
+                            </tr>
+                            @endforeach    
+                        </table>
                     </div>
                 </div>
             </div>

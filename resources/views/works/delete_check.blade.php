@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    以下のユーザーを削除します。よろしいですか?
+                    この職種を削除します。よろしいですか?
                 </div>
                 <div class="card-body">
                     @if (session('status'))
@@ -18,26 +18,20 @@
                         <form method="POST" action="delete_finish">
                             <table>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>NAME</th>
-                                    <th>EMAIL</th>
                                     <th>WORKS_ID</th>
-                                    <th>COMMENT</th>
+                                    <th>WORKS_NAME</th>
                                     <th>CREATED_AT</th>
                                     <th>UPDATED_AT</th>
-                                    <th>DELETE_FLAG(0=表示, 1=非表示)</th>
+                                    <th>DELETE_FLAG(0=表示, 1=削除)</th>
                                 </tr>
                                 <tr>
-                                    <td>{{ $Data['id'] }}</td>
-                                    <td>{{ $Data['name'] }}</td>
-                                    <td>{{ $Data['email'] }}</td>
                                     <td>{{ $Data['works_id'] }}</td>
-                                    <td>{{ $Data['comment'] }}</td>
+                                    <td>{{ $Data['works_name'] }}</td>
                                     <td>{{ $Data['created_at'] }}</td>
                                     <td>{{ $Data['updated_at'] }}</td>
                                     <td>{{ $Data['delete_flag'] }}</td>
                                     <td><input type="submit" value="削除する"></td>
-                                    <input type="hidden" value="{{ $Data['id'] }}" name="delete_id">
+                                    <input type="hidden" value="{{ $Data['works_id'] }}" name="delete_id">
                                 </tr>    
                             </table>
                             @csrf
@@ -51,5 +45,5 @@
         </div>
     </div>
 </div>
-    
+
 @endsection
