@@ -44,7 +44,7 @@
                         </form>
                     </div>
                     <div class="to_home">
-                    	<input type="button" value="ホーム画面へ" onclick="/home">
+                    	<input type="button" value="ホーム画面に戻る" onclick="location.href='/home'">
                 	</div>
                 </div>
             </div>
