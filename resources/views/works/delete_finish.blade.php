@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    以下のユーザーを削除します。よろしいですか?
+                    選択した職種の削除が完了しました。
                 </div>
                 <div class="card-body">
                     @if (session('status'))
@@ -18,38 +18,30 @@
                         <form method="POST" action="delete_finish">
                             <table>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>NAME</th>
-                                    <th>EMAIL</th>
                                     <th>WORKS_ID</th>
-                                    <th>COMMENT</th>
+                                    <th>WORKS_NAME</th>
                                     <th>CREATED_AT</th>
                                     <th>UPDATED_AT</th>
-                                    <th>DELETE_FLAG(0=表示, 1=非表示)</th>
+                                    <th>DELETE_FLAG(0=表示, 1=削除)</th>
                                 </tr>
                                 <tr>
-                                    <td>{{ $Data['id'] }}</td>
-                                    <td>{{ $Data['name'] }}</td>
-                                    <td>{{ $Data['email'] }}</td>
                                     <td>{{ $Data['works_id'] }}</td>
-                                    <td>{{ $Data['comment'] }}</td>
+                                    <td>{{ $Data['works_name'] }}</td>
                                     <td>{{ $Data['created_at'] }}</td>
                                     <td>{{ $Data['updated_at'] }}</td>
                                     <td>{{ $Data['delete_flag'] }}</td>
-                                    <td><input type="submit" value="削除する"></td>
-                                    <input type="hidden" value="{{ $Data['id'] }}" name="delete_id">
                                 </tr>    
                             </table>
                             @csrf
                         </form>
                     </div>
                     <div>
-                        <input type="button" value="戻る"　onclick="location.href='/admin'">
+                        <input type="button" value="管理画面に戻る"　onclick="location.href='/admin'">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-    
+
 @endsection
