@@ -10998,3 +10998,8 @@ table{
 .to_home{
   margin: 10px 0px;
 }
+
+.error{
+  color: red;
+  font-size: 15px;
+}

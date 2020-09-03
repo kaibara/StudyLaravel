@@ -28,13 +28,20 @@
                                 @else
                                 <tr>
                                     <td><input type="text" name="entry_works_name"></td>
-                                    <td><input type="text" name="entry_delete_flag"></td>
+                                    <td><input type="text" value="0" name="entry_delete_flag"></td>
                                 @endif
                                  	<td><input type="submit" value="確認画面へ"></td>
                                 </tr>
                             </table>
                             @csrf
                         </form>
+                        @if(count($errors) > 0)
+                            <ul class="error">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
                     </div>
                     <div>
                         <input type="button" value="戻る" onclick="location.href='/admin'">
