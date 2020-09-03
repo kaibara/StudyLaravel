@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    以下の内容で登録します。よろしいですか?
+                    以下の内容に変更します。よろしいですか?
                 </div>
                 <div class="card-body">
                     @if (session('status'))

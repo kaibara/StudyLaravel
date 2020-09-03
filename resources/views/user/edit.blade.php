@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    データの変更したい箇所に値を入力してください
+                    編集したい項目に値を入力してください
                 </div>
                 <div class="card-body">
                     @if (session('status'))

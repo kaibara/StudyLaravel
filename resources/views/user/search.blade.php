@@ -44,7 +44,7 @@
                         </form>
                     </div>
                 	<div>
-                        <input type="button" value="戻る" onclick="history.back()">
+                        <input type="button" value="ホーム画面に戻る" onclick="location.href='/home'">
                     </div>
                 </div>
             </div>

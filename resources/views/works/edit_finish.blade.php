@@ -1,25 +1,45 @@
-@extends('templeates.page_template')
-@section('contents')
-    <h2>下記の職種データをこの内容で登録しました。</h2>
-    <table>
-        <tr>
-            <th>WORKS_ID</th>
-            <th>WORKS_NAME</th>
-            <th>CREATED_AT</th>
-            <th>UPDATED_AT</th>
-            <th>DELETE_FLAG(0=表示, 1=非表示)</th>
-        </tr>
-        <tr>
-            <td>{{ $data['works_id'] }}</td>
-            <td>{{ $data['works_name'] }}</td>
-            <td>{{ $data['created_at'] }}</td>
-            <td>{{ $data['updated_at'] }}</td>
-            <td>{{ $data['delete_flag'] }}</td>
-        </tr>
-    </table>
-    <div class="button">
-        <a href="/admin">
-            <input type="button" value="戻る">
-        </a>
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                   　以下の内容で職種を保存しました。
+                </div>
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    <div class="edit_table">
+                        <table>
+                            <tr>
+                                <th>WORKS_ID</th>
+                                <th>WORKS_NAME</th>
+                                <th>CREATED_AT</th>
+                                <th>UPDATED_AT</th>
+                                <th>DELETE_FLAG(0=表示, 1=非表示)</th>
+                            </tr>
+                            <tr>
+                                <td>{{ $Data['works_id'] }}</td>
+                                <td>{{ $Data['works_name'] }}</td>
+                                <td>{{ $Data['created_at'] }}</td>
+                                <td>{{ $Data['updated_at'] }}</td>
+                                <td>{{ $Data['delete_flag'] }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <input type="button" value="管理画面に戻る" onclick="location.href='/admin'">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+    
 @endsection
+

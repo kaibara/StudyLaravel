@@ -41,7 +41,7 @@
                         </table>
                     </div>
                     <div>
-                        <a href="/admin">管理画面に戻る</a>
+                        <input type="button" value="管理画面に戻る" onclick="location.href='/admin'">
                     </div>
                 </div>
             </div>

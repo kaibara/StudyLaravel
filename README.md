@@ -1,4 +1,6 @@
-<<<<<<< HEAD
+# StudyLaravel
+Laravelの個人的な学習
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
@@ -60,7 +62,10 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-=======
-# StudyLaravel
-Laravelの個人的な学習
->>>>>>> origin/master
+
+## Qiita articles
+- [Laravelでログイン機能付きサイト作成 with XAMPP(1/4)　基礎学習編](https://qiita.com/kaitaku/items/e3f0b144b5eb182e9681)
+- [Laravelでログイン機能付きサイト作成 with XAMPP(2/4)　認証機能の有効化編](https://qiita.com/kaitaku/items/13db4b60b7a4db6050af)
+- [Laravelでログイン機能付きサイト作成 with XAMPP(3/4) ユーザー情報変更機能編](https://qiita.com/kaitaku/items/d7faf24a68ba933607f0)
+- [Laravelでログイン機能付きサイト作成 with XAMPP(4/4) 検索機能編](https://qiita.com/kaitaku/items/16a635e2c74af92c75e9)
+- [Laravelの認証機能をカスタマイズしてデータベースにレコードを作成する](https://qiita.com/kaitaku/items/af919955a7e8de898a20)
