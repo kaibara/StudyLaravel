@@ -90,7 +90,7 @@
                                 <td>{{ $Key['delete_flag'] }}</td>
                                 <td>
                                     <form action="admin/works/edit" method="POST">
-                                        <input type="hidden" value="{{ $Key['works_id'] }}" name="edit_works_id">
+                                        <input type="hidden" value="{{ $Key['works_id'] }}" name="edit_id">
                                         <input type="submit" value="編集する">
                                         @csrf
                                     </form>

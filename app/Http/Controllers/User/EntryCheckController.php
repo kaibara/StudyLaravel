@@ -4,10 +4,11 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRegisterRequest;
 
 class EntryCheckController extends Controller
 {
-    public function entry_check(Request $request)
+    public function entry_check(UserRegisterRequest $request)
     {
     	$entry_name = $request -> input('entry_name');
     	$entry_email = $request -> input('entry_email');

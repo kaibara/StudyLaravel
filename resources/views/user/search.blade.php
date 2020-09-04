@@ -13,24 +13,29 @@
                 	 <div class="search">
                         <form method="post" action="result">
                         	<div class="category">
-                        		<p>検索項目: </p>
+                        		<p>検索カテゴリー: </p>
                         		<select name="search_category">
                         		@if(isset($Search))
                         			@for($i = 0; $i < 4; $i++)
                         				@if($Search['category'] === $NAME[$i])
-                        				<option value = "{{ $NAME[$i] }}" selected>{{ $NAME[$i] }}</option>
+                        				<option value="{{ $NAME[$i] }}" selected>{{ $NAME[$i] }}</option>
                         				@else
-                        				<option value = "{{ $NAME[$i] }}">{{ $NAME[$i] }}</option>
+                        				<option value="{{ $NAME[$i] }}">{{ $NAME[$i] }}</option>
                         				@endif
                         			@endfor
                         		@else
-                        			<option value = "" selected>選択してください</option>
+                        			<option value="0" selected>選択してください</option>
                         			@for($i = 0; $i < 4; $i++)
-                        			<option value = "{{ $NAME[$i] }}">{{ $NAME[$i] }}</option>
+                        			<option value="{{ $NAME[$i] }}">{{ $NAME[$i] }}</option>
                         			@endfor
 								@endif
 								</select>
                         	</div>
+                            @if($errors->has('search_category'))
+                            <div class="error">
+                                <p>{{ $errors->first('search_category') }}</p>
+                            </div>
+                            @endif
                         	<div class="word">
                         		<p>検索ワード: </p>
                         		@if(isset($Search))
@@ -39,6 +44,11 @@
                         			<input type="text" name="search_word">
 								@endif
                         	</div>
+                            @if($errors->has('search_word'))
+                            <div class="error">
+                                <p>{{ $errors->first('search_word') }}</p>
+                            </div>
+                            @endif
 							<input type="submit" value="検索する">
                             @csrf
                         </form>

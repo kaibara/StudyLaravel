@@ -38,12 +38,19 @@
                                     <td><input type="text" value="{{ $User['comment'] }}" name="edit_comment"></td>
                                     <td>{{ $User['created_at'] }}</td>
                                     <td>{{ $User['updated_at'] }}</td>
-                                    <td><input type="text" value="{{ $User['delete_flag'] }}" name="edit_flag"></td>
+                                    <td><input type="text" value="{{ $User['delete_flag'] }}" name="edit_delete_flag"></td>
                                     <td><input type="submit" value="確認画面へ"></td>
                                 </tr>    
                             </table>
                             @csrf
                         </form>
+                        @if(count($errors) > 0)
+                            <ul class="error">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
                     </div>
                     <div>
                         <input type="button" value="戻る" onclick="{{ $Back }}">

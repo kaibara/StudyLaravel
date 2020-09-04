@@ -34,7 +34,7 @@ class EditController extends Controller
         $email = $request -> input('edit_email');
         $works_id = $request -> input('edit_works_id');
         $comment = $request -> input('edit_comment');
-        $flag = $request -> input('edit_flag');
+        $flag = $request -> input('edit_delete_flag');
         $User_data = array(
             'id' => $id,
             'name' => $name,

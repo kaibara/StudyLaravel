@@ -33,7 +33,7 @@ class WorksRegisterRequest extends FormRequest
         return [
             'entry_works_name.required' => '職種名を入力してください。',
             'entry_works_name.max' => '職種名は20字以内で入力してください。',
-            'entry_works_name.unique' => 'この職種名は既に利用されています。',
+            'entry_works_name.unique' => 'この職種名は既に登録されています。',
             'entry_delete_flag.boolean'  => '0か1を入力してください。',
         ];
     }

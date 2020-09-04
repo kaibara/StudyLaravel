@@ -44,10 +44,10 @@ Route::post('/admin/user/entry_finish','User\EntryFinishController@entry_finish'
 
 Route::get('/admin/user/edit','AdminController@admin');
 Route::post('/admin/user/edit','User\EditController@admin');
+Route::get('/admin/user/edit_check','User\EditController@admin');
+Route::post('/admin/user/edit_check','User\EditCheckController@edit_check');
 Route::post('/admin/user/edit_return','User\EditController@return_check');
-Route::get('/admin/user/edit_check','User\EditController@edit');
-Route::post('/admin/user/edit_check','User\EditCheckController@check');
-Route::get('/admin/user/edit_finish','User\EditController@edit');
+Route::get('/admin/user/edit_finish','User\EditController@admin');
 Route::post('/admin/user/edit_finish','User\EditFinishController@finish');
 
 Route::get('/admin/user/delete_check','AdminController@admin');
