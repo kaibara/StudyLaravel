@@ -21,7 +21,7 @@
                                     <th>ID</th>
                                     <th>NAME</th>
                                     <th>EMAIL</th>
-                                    <th>WORKS_ID</th>
+                                    <th>WORKS</th>
                                     <th>COMMENT</th>
                                     <th>CREATED_AT</th>
                                     <th>UPDATED_AT</th>
@@ -31,7 +31,7 @@
                                     <td>{{ $Data['id'] }}</td>
                                     <td>{{ $Data['name'] }}</td>
                                     <td>{{ $Data['email'] }}</td>
-                                    <td>{{ $Data['works_id'] }}</td>
+                                    <td>{{ $Data['works_name'] }}</td>
                                     <td>{{ $Data['comment'] }}</td>
                                     <td>{{ $Data['created_at'] }}</td>
                                     <td>{{ $Data['updated_at'] }}</td>

@@ -24,7 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/edit','User\EditController@edit');
 Route::post('/home/edit','User\EditController@return_check');
 Route::get('/home/edit_check','User\EditController@edit');
-Route::post('/home/edit_check','User\EditCheckController@check');
+Route::post('/home/edit_check','User\EditCheckController@edit_check');
 Route::get('/home/edit_finish','User\EditController@edit');
 Route::post('/home/edit_finish','User\EditFinishController@finish');
 

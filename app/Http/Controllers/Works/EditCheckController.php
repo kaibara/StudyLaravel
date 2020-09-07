@@ -12,7 +12,7 @@ class EditCheckController extends Controller
     public function edit_check(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'edit_name' => 'required|max:20|unique:works,works_name',
+            'edit_name' => 'required|max:20|unique:works,works_name,'.$request -> edit_id.',works_id',
             'edit_flag' => 'boolean',
         ],
         [
@@ -25,7 +25,7 @@ class EditCheckController extends Controller
         if ($validator->fails()) {
             $edit_id = $request -> input('edit_id');
             $edit_name = $request -> input('edit_name');
-            $edit_delete_flag = $request -> input('edit_delete_flag');
+            $edit_delete_flag = $request -> input('edit_flag');
             $edit_data = Work::where('works_id', $edit_id) -> first();
             $edit = array(
                 'works_id' => $edit_id,

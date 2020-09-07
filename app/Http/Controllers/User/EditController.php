@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
+use App\Work;
 
 class EditController extends Controller
 {
@@ -14,16 +15,18 @@ class EditController extends Controller
     {
     	$Auth_data = Auth::id();
     	$User_data = User::where('id', $Auth_data) -> first();
+        $works = Work::where('delete_flag',0)->get();
         $back_url = "location.href='/home'";
-        return view('user/edit',['User' => $User_data, 'Back' => $back_url]);
+        return view('user/edit',['User' => $User_data, 'Back' => $back_url, 'Work' => $works]);
     }
 
     public function admin(Request $request)
     {
         $edit_admin_id = $request -> input('edit_id');
         $edit_admin_data = User::where('id', $edit_admin_id) -> first();
+        $works = Work::where('delete_flag',0)->get();
         $back_url = "location.href='/admin'";
-        return view('user/edit',['User' => $edit_admin_data, 'Back' => $back_url]);
+        return view('user/edit',['User' => $edit_admin_data, 'Back' => $back_url, 'Work' => $works]);
     }
 
     public function return_check(Request $request)
@@ -50,6 +53,7 @@ class EditController extends Controller
         }else{
             $back_url = "location.href='/admin'";
         }
-        return view('user/edit',['User' => $User_data, 'Back' => $back_url]);
+        $works = Work::where('delete_flag',0)->get();
+        return view('user/edit',['User' => $User_data, 'Back' => $back_url, 'Work' => $works]);
     }
 }

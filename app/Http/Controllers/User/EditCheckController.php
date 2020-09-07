@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use App\Work;
 use Validator;
 
 class EditCheckController extends Controller
@@ -12,9 +13,8 @@ class EditCheckController extends Controller
     public function edit_check(Request $request)
     {
          $validator = Validator::make($request->all(), [
-            'edit_name' => 'required|max:20|unique:users,name',
-            'edit_email' => 'required|email|unique:users,email',
-            'edit_works_id' => 'required|integer',
+            'edit_name' => 'required|max:20|unique:users,name,'.$request -> edit_id.',id',
+            'edit_email' => 'required|email|unique:users,email,'.$request -> edit_id.',id',
             'edit_comment' => 'required',
             'edit_delete_flag' => 'boolean',
         ],
@@ -25,8 +25,6 @@ class EditCheckController extends Controller
             'edit_email.required' => 'Eメールを入力してください。',
             'edit_email.email' => 'Eメールはメールアドレス形式で入力してください。',
             'edit_email.unique' => 'このEメールアドレスは既に登録されています。',
-            'edit_works_id.required' => '職種IDを入力してください。',
-            'edit_works_id.integer' => '職種IDは数値で入力してください。',
             'edit_comment.required' => 'コメントを入力してください。',
             'edit_delete_flag.boolean'  => '0か1を入力してください。',
         ]);
@@ -56,6 +54,8 @@ class EditCheckController extends Controller
         $name = $request -> input('edit_name');
         $email = $request -> input('edit_email');
         $works_id = $request -> input('edit_works_id');
+        $works = Work::where('works_id', $works_id) -> first();
+        $works_name = $works['works_name'];
         $comment = $request -> input('edit_comment');
         $flag = $request -> input('edit_delete_flag');
         $edit_database = User::where('id', $id) -> first();
@@ -64,6 +64,7 @@ class EditCheckController extends Controller
             'name' => $name,
             'email' => $email,
             'works_id' => $works_id,
+            'works_name' => $works_name,
             'comment' => $comment,
             'created_at' => $edit_database['created_at'],
             'updated_at' => $edit_database['updated_at'],

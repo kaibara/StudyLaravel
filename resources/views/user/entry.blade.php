@@ -20,7 +20,7 @@
                                 <tr>
                                     <th>NAME</th>
                                     <th>EMAIL</th>
-                                    <th>WORKS_ID</th>
+                                    <th>WORKS</th>
                                     <th>COMMENT</th>
                                     <th>DELETE_FLAG(0=表示, 1=非表示)</th>
                                 </tr>
@@ -28,14 +28,36 @@
                                 <tr>
                                     <td><input type="text" value="{{ $Data['entry_name'] }}" name="entry_name"></td>
                                     <td><input type="text" value="{{ $Data['entry_email'] }}" name="entry_email"></td>
-                                    <td><input type="text" value="{{ $Data['entry_works_id'] }}" name="entry_works_id"></td>
+                                    <td>
+                                        <select name="entry_works_id">
+                                            <option value="0" selected>選択してください</option>
+                                            @for($i = 0; $i < count($Work); $i++)
+                                                @if($Work[$i]['works_id'] == $Data['entry_works_id'])
+                                                    <option value="{{ $Work[$i]['works_id'] }}" selected>{{ $Work[$i]['works_name'] }}</option>
+                                                @else
+                                                    <option value="{{ $Work[$i]['works_id'] }}">{{ $Work[$i]['works_name'] }}</option>
+                                                @endif
+                                            @endfor
+                                        </select>
+                                    </td>
                                     <td><input type="text" value="{{ $Data['entry_comment'] }}" name="entry_comment"></td>
                                     <td><input type="text" value="{{ $Data['entry_delete_flag'] }}" name="entry_delete_flag"></td>
                                 @else
                                 <tr>
                                     <td><input type="text" name="entry_name" value="{{ old('entry_name') }}"></td>
                                     <td><input type="text" name="entry_email" value="{{ old('entry_email') }}"></td>
-                                    <td><input type="text" name="entry_works_id" value="{{ old('entry_works_id') }}"></td>
+                                    <td>
+                                        <select name="entry_works_id">
+                                            <option value="0" selected>選択してください</option>
+                                            @for($i = 0; $i < count($Work); $i++)
+                                                @if($Work[$i]['works_name'] == old('entry_works_id') )
+                                                    <option value="{{ $Work[$i]['works_id'] }}" selected>{{ $Work[$i]['works_name'] }}</option>
+                                                @else
+                                                    <option value="{{ $Work[$i]['works_id'] }}">{{ $Work[$i]['works_name'] }}</option>
+                                                @endif
+                                            @endfor
+                                        </select>
+                                    </td>
                                     <td><input type="text" name="entry_comment" value="{{ old('entry_comment', 'こんにちは!!') }}"></td>
                                     <td><input type="text" name="entry_delete_flag" value="{{ old('entry_delete_flag', '0') }}"></td>
                                 @endif

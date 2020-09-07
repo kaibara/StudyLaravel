@@ -21,7 +21,7 @@
                                 <th>NAME</th>
                                 <th>EMAIL</th>
                                 <th>PASS</th>
-                                <th>WORKS_ID</th>
+                                <th>WORKS</th>
                                 <th>COMMENT</th>
                                 <th>CREATED_AT</th>
                                 <th>UPDATED_AT</th>
@@ -32,7 +32,7 @@
                                 <td>{{ $Data['name'] }}</td>
                                 <td>{{ $Data['email'] }}</td>
                                 <td>{{ $Pass }}</td>
-                                <td>{{ $Data['works_id'] }}</td>
+                                <td>{{ $Name }}</td>
                                 <td>{{ $Data['comment'] }}</td>
                                 <td>{{ $Data['created_at'] }}</td>
                                 <td>{{ $Data['updated_at'] }}</td>
