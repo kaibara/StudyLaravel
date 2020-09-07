@@ -14,19 +14,19 @@
                         <form method="post" action="result">
                         	<div class="category">
                         		<p>検索カテゴリー: </p>
-                        		<select name="search_category">
+                        		<select  id="selecter" name="search_category" onchange="searchEvent();">
                         		@if(isset($Search))
-                        			@for($i = 0; $i < 4; $i++)
+                        			@for($i = 0; $i < count($NAME); $i++)
                         				@if($Search['category'] === $NAME[$i])
-                        				<option value="{{ $NAME[$i] }}" selected>{{ $NAME[$i] }}</option>
+                            				<option value="{{ $NAME[$i] }}" selected>{{ $NAME[$i] }}</option>
                         				@else
-                        				<option value="{{ $NAME[$i] }}">{{ $NAME[$i] }}</option>
+                            				<option value="{{ $NAME[$i] }}">{{ $NAME[$i] }}</option>
                         				@endif
                         			@endfor
                         		@else
                         			<option value="0" selected>選択してください</option>
-                        			@for($i = 0; $i < 4; $i++)
-                        			<option value="{{ $NAME[$i] }}">{{ $NAME[$i] }}</option>
+                        			@for($i = 0; $i < count($NAME); $i++)
+                            			<option value="{{ $NAME[$i] }}">{{ $NAME[$i] }}</option>
                         			@endfor
 								@endif
 								</select>
@@ -36,7 +36,7 @@
                                 <p>{{ $errors->first('search_category') }}</p>
                             </div>
                             @endif
-                        	<div class="word">
+                        	<div id="word" class="word">
                         		<p>検索ワード: </p>
                         		@if(isset($Search))
                         			<input type="text" name="search_word" value="{{ $Search['word'] }}">
@@ -44,6 +44,31 @@
                         			<input type="text" name="search_word">
 								@endif
                         	</div>
+                            @if($errors->has('search_word'))
+                            <div class="error">
+                                <p>{{ $errors->first('search_word') }}</p>
+                            </div>
+                            @endif
+
+                            <div id="job" class="word">
+                                <p>職種: </p>
+                                <select name="search_works">
+                                    @if(isset($Search))
+                                        @for($i = 0; $i < count($Work); $i++)
+                                            @if($Work[$i]['works_id'] == $Search['works'])
+                                                <option value="{{ $Work[$i]['works_id'] }}" selected>{{ $Work[$i]['works_name'] }}</option>
+                                            @else
+                                                <option value="{{ $Work[$i]['works_id'] }}">{{ $Work[$i]['works_name'] }}</option>
+                                            @endif
+                                        @endfor
+                                    @else
+                                        <option value="0" selected>選択してください</option>
+                                            @for($i = 0; $i < count($Work); $i++)
+                                                <option value="{{ $Work[$i]['works_id'] }}">{{ $Work[$i]['works_name'] }}</option>
+                                            @endfor
+                                    @endif
+                                </select>
+                            </div>
                             @if($errors->has('search_word'))
                             <div class="error">
                                 <p>{{ $errors->first('search_word') }}</p>
@@ -61,5 +86,21 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+function searchEvent(){
+    if(document.getElementById('selecter')){
+        id = document.getElementById('selecter').value;
+        if(id == 'WORKS'){
+            document.getElementById('job').style.display = "";
+            document.getElementById('word').style.display = "none";
+        }else if(id != 'WORKS'){
+            document.getElementById('job').style.display = "none";
+            document.getElementById('word').style.display = "";
+        }
+    }
+}
+window.onload = entryChange;
+</script>
 
 @endsection

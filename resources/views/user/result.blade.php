@@ -22,7 +22,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>NAME</th>
-                                    <th>WORKS_ID</th>
+                                    <th>WORKS</th>
                                     <th>COMMENT</th>
                                 </tr>
                                 @foreach($User as $Data)
