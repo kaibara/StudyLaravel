@@ -15,9 +15,9 @@
                         		検索項目: {{ $Search['category'] }}
                         	</div>
                         	<div class="word">
-                        		検索ワード: {{ $Search['word'] }}
+                        		検索ワード: {{ $Search['search'] }}
                         	</div>
-                        	@if (isset($User))
+                        	@if (count($User) > 0)
                         	<table>
                                 <tr>
                                     <th>ID</th>
@@ -29,7 +29,7 @@
                                 <tr>
                                     <td>{{ $Data['id'] }}</td>
                                     <td>{{ $Data['name'] }}</td>
-                                    <td>{{ $Data['works_id'] }}</td>
+                                    <td>{{ $Works }}</td>
                                     <td>{{ $Data['comment'] }}</td>
                                 </tr>
                                 @endforeach    
@@ -38,7 +38,7 @@
                         	<p>検索条件に一致するユーザーは登録されていません</p>
                         	@endif
                         	<input type="hidden" value="{{ $Search['category'] }}" name="search_category" >
-                        	<input type="hidden" value="{{ $Search['word'] }}" name="search_word" >
+                        	<input type="hidden" value="{{ $Search['search'] }}" name="search_word" >
                         	<input type="submit" value="検索画面にもどる">
                             @csrf
                         </form>
