@@ -38,17 +38,27 @@ class ResultController extends Controller
         if($category !== "WORKS"){
             $search = $request -> input('search_word');
             $user_data = User::where($category, 'like', "%$search%") -> get();
+            if(count($user_data) > 0){
+                foreach ($user_data as $key) {
+                    $search_id = $key['works_id'];
+                    $search_data = Work::where('works_id', $search_id) -> first();
+                    $search_works[] = $search_data['works_name'];
+                }
+            }else{
+                $search_works = "";
+            }
         }else{
             $category_name = "works_id";
             $search_id = $request -> input('search_job');
             $search_data = Work::where('works_id', $search_id) -> first();
             $search = $search_data['works_name'];
+            $search_works = $search_data['works_name'];
             $user_data = User::where($category_name, 'like', "$search_id") -> get();
         }
         $search_data = array(
             'category' => $category,
             'search' => $search
         );
-        return view('user/result',['Search' => $search_data, 'User' => $user_data, 'Works' => $search]);
+        return view('user/result',['Search' => $search_data, 'User' => $user_data, 'Works' => $search_works]);
     }
 }

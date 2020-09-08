@@ -17,6 +17,7 @@
                         	<div class="word">
                         		検索ワード: {{ $Search['search'] }}
                         	</div>
+                            <?php $count=0; ?>
                         	@if (count($User) > 0)
                         	<table>
                                 <tr>
@@ -29,7 +30,12 @@
                                 <tr>
                                     <td>{{ $Data['id'] }}</td>
                                     <td>{{ $Data['name'] }}</td>
-                                    <td>{{ $Works }}</td>
+                                    @if(is_array($Works)>0)
+                                        <td>{{ $Works[$count] }}</td>
+                                        <?php $count++; ?>
+                                    @else
+                                        <td>{{ $Works }}</td>
+                                    @endif
                                     <td>{{ $Data['comment'] }}</td>
                                 </tr>
                                 @endforeach    
@@ -44,7 +50,11 @@
                         </form>
                     </div>
                     <div class="to_home">
-                    	<input type="button" value="ホーム画面に戻る" onclick="location.href='/home'">
+                    	@guest
+                            <input type="button" value="ホーム画面に戻る" onclick="location.href='/'">
+                        @else
+                            <input type="button" value="ホーム画面に戻る" onclick="location.href='/home'">
+                        @endguest
                 	</div>
                 </div>
             </div>

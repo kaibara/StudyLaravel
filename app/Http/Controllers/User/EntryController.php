@@ -11,8 +11,8 @@ class EntryController extends Controller
     public function entry()
     {
         $works = Work::where('delete_flag',0)->get();
-        if($_SERVER['HTTP_REFERER'] == "/home/entry"){
-            $back_url = "location.href='/home'";
+        if($_SERVER['REQUEST_URI'] == "/home/entry"){
+            $back_url = "location.href='/'";
         }else{
             $back_url = "location.href='/admin'";
         }
@@ -34,8 +34,8 @@ class EntryController extends Controller
     		'entry_delete_flag' => $entry_delete_flag
     	);
         $works = Work::where('delete_flag',0)->get();
-        if($_SERVER['HTTP_REFERER'] == "/home/entry_check"){
-            $back_url = "location.href='/home'";
+        if($_SERVER['REQUEST_URI'] == "/home/entry"){
+            $back_url = "location.href='/'";
         }else{
             $back_url = "location.href='/admin'";
         }

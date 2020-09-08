@@ -65,7 +65,6 @@
                                             @endif
                                         @endfor
                                     @else
-                                        <option value="0" selected>選択してください</option>
                                             @for($i = 0; $i < count($Work); $i++)
                                                 <option value="{{ $Work[$i]['works_id'] }}">{{ $Work[$i]['works_name'] }}</option>
                                             @endfor
@@ -82,7 +81,11 @@
                         </form>
                     </div>
                 	<div>
-                        <input type="button" value="ホーム画面に戻る" onclick="location.href='/home'">
+                        @guest
+                            <input type="button" value="ホーム画面に戻る" onclick="location.href='/'">
+                        @else
+                            <input type="button" value="ホーム画面に戻る" onclick="location.href='/home'">
+                        @endguest
                     </div>
                 </div>
             </div>

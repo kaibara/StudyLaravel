@@ -40,7 +40,7 @@ class UserRegisterRequest extends FormRequest
             'entry_email.required' => 'Eメールを入力してください。',
             'entry_email.email' => 'Eメールはメールアドレス形式で入力してください。',
             'entry_name.unique' => 'このEメールアドレスは既に登録されています。',
-            'entry_works_id.required' => '職種を選択してください。',
+            'entry_works_id.not_in' => '職種を選択してください。',
             'entry_comment.required' => 'コメントを入力してください。',
             'entry_delete_flag.boolean'  => '0か1を入力してください。',
         ];

@@ -31,7 +31,7 @@ class EntryFinishController extends Controller
         $display_id = User::max('id');
         $display_data = User::where('id', $display_id) -> first();
         if($_SERVER['REQUEST_URI'] == "/home/entry_finish"){
-            $back_action = "/home";
+            $back_action = "/";
             $back_message = "トップ";
         }else{
             $back_action = "/admin";

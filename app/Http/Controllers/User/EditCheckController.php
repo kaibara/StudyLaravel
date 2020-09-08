@@ -47,7 +47,8 @@ class EditCheckController extends Controller
                 'delete_flag' => $edit_delete_flag
             );
             $back_url = "location.href='/admin'";
-            return view('user/edit',['User' => $edit, 'Back' => $back_url])
+            $works = Work::where('delete_flag',0)->get();
+            return view('user/edit',['User' => $edit, 'Back' => $back_url, 'Work' => $works])
                 -> withErrors($validator);
         }
         $id = $request -> input('edit_id');
