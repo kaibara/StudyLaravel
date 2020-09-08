@@ -41,7 +41,7 @@
                         </table>
                     </div>
                     <div>
-                        <input type="button" value="管理画面に戻る" onclick="location.href='/admin'">
+                        <a href="{{ $Back }}">{{ $Message }}に戻る</a>
                     </div>
                 </div>
             </div>

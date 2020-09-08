@@ -30,6 +30,13 @@ class EntryFinishController extends Controller
         ]);
         $display_id = User::max('id');
         $display_data = User::where('id', $display_id) -> first();
-        return view('/user/entry_finish',['Data' => $display_data, 'Pass' => $entry_pass, 'Name' => $entry_works_name]);
+        if($_SERVER['REQUEST_URI'] == "/home/entry_finish"){
+            $back_action = "/home";
+            $back_message = "トップ";
+        }else{
+            $back_action = "/admin";
+            $back_message = "管理画面";
+        }
+        return view('/user/entry_finish',['Data' => $display_data, 'Pass' => $entry_pass, 'Name' => $entry_works_name, 'Back' => $back_action, 'Message' => $back_message]);
     }
 }

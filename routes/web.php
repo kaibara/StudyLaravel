@@ -28,6 +28,13 @@ Route::post('/home/edit_check','User\EditCheckController@edit_check');
 Route::get('/home/edit_finish','User\EditController@edit');
 Route::post('/home/edit_finish','User\EditFinishController@finish');
 
+Route::get('/home/entry','User\EntryController@entry');
+Route::post('/home/entry','User\EntryController@return_entry');
+Route::get('/home/entry_check','User\EntryController@entry');
+Route::post('/home/entry_check','User\EntryCheckController@entry_check');
+Route::get('/home/entry_finish','User\EntryController@entry');
+Route::post('/home/entry_finish','User\EntryFinishController@entry_finish');
+
 Route::get('/home/search','User\SearchController@search');
 Route::post('/home/search','User\SearchController@return_search');
 Route::get('/home/result','User\SearchController@search');

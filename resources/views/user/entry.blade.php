@@ -75,7 +75,7 @@
                         @endif
                     </div>
                     <div>
-                        <input type="button" value="戻る" onclick="location.href='/admin'">
+                        <input type="button" value="戻る" onclick="{{ $Back }}">
                     </div>
                 </div>
             </div>
