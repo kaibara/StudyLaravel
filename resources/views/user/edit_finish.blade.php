@@ -20,6 +20,7 @@
                                 <th>ID</th>
                                 <th>NAME</th>
                                 <th>EMAIL</th>
+                                <th>PASSWORD</th>
                                 <th>WORKS</th>
                                 <th>COMMENT</th>
                                 <th>CREATED_AT</th>
@@ -30,6 +31,7 @@
                                 <td>{{ $Data['id'] }}</td>
                                 <td>{{ $Data['name'] }}</td>
                                 <td>{{ $Data['email'] }}</td>
+                                <td>{{ $Pass }}</td>
                                 <td>{{ $Name }}</td>
                                 <td>{{ $Data['comment'] }}</td>
                                 <td>{{ $Data['created_at'] }}</td>

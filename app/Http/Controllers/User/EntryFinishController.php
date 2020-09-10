@@ -4,9 +4,9 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Work;
-use Illuminate\Support\Facades\Hash;
 
 class EntryFinishController extends Controller
 {

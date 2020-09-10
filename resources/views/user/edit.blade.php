@@ -21,6 +21,7 @@
                                     <th>ID</th>
                                     <th>NAME</th>
                                     <th>EMAIL</th>
+                                    <th>PASSWORD</th>
                                     <th>WORKS</th>
                                     <th>COMMENT</th>
                                     <th>CREATED_AT</th>
@@ -34,6 +35,11 @@
                                     </td>
                                     <td><input type="text" value="{{ $User['name'] }}" name="edit_name"></td>
                                     <td><input type="text" value="{{ $User['email'] }}" name="edit_email"></td>
+                                    @if(isset($Pass))
+                                        <td><input type="password" value="{{ $Pass }}" name="edit_password"></td>
+                                    @else
+                                        <td><input type="password"  name="edit_password"></td>
+                                    @endif
                                     <td>
                                         <select name="edit_works_id">
                                             @for($i = 0; $i < count($Work); $i++)

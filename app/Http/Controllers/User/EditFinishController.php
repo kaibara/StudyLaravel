@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Work;
 
@@ -14,6 +15,7 @@ class EditFinishController extends Controller
         $id = $request -> input('edit_id');
         $name = $request -> input('edit_name');
         $email = $request -> input('edit_email');
+        $password = $request -> input('edit_password');
         $works_id = $request -> input('edit_works_id');
         $works = Work::where('works_id', $works_id) -> first();
         $works_name = $works['works_name'];
@@ -22,6 +24,7 @@ class EditFinishController extends Controller
         $edit_data = User::where('id', $id) -> update([
             'name' => $name,
             'email' => $email,
+            'password' => Hash::make($password),
             'works_id' => $works_id,
             'comment' => $comment,
             'delete_flag' => $flag
@@ -34,6 +37,6 @@ class EditFinishController extends Controller
             $back_action = "/admin";
             $back_message = "管理画面";
         }
-        return view('user/edit_finish',['Data' => $User_data, 'Back' => $back_action, 'Message' => $back_message, 'Name' => $works_name]);
+        return view('user/edit_finish',['Data' => $User_data, 'Back' => $back_action, 'Message' => $back_message, 'Name' => $works_name, 'Pass' => $password]);
     }
 }

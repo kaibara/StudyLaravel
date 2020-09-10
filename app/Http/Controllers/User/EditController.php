@@ -35,6 +35,7 @@ class EditController extends Controller
         $edit_data = User::where('id', $id) -> first();
         $name = $request -> input('edit_name');
         $email = $request -> input('edit_email');
+        $password = $request -> input('edit_password');
         $works_id = $request -> input('edit_works_id');
         $comment = $request -> input('edit_comment');
         $flag = $request -> input('edit_delete_flag');
@@ -54,6 +55,6 @@ class EditController extends Controller
             $back_url = "location.href='/admin'";
         }
         $works = Work::where('delete_flag',0)->get();
-        return view('user/edit',['User' => $User_data, 'Back' => $back_url, 'Work' => $works]);
+        return view('user/edit',['User' => $User_data, 'Back' => $back_url, 'Work' => $works, 'Pass' => $password]);
     }
 }
