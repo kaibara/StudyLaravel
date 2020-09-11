@@ -1,6 +1,20 @@
 # StudyLaravel
 Laravelの個人的な学習
 
+## Qiita articles
+- [Laravelでログイン機能付きサイト作成 with XAMPP(1/4)　基礎学習編](https://qiita.com/kaitaku/items/e3f0b144b5eb182e9681)
+- [Laravelでログイン機能付きサイト作成 with XAMPP(2/4)　認証機能の有効化編](https://qiita.com/kaitaku/items/13db4b60b7a4db6050af)
+- [Laravelでログイン機能付きサイト作成 with XAMPP(3/4) ユーザー情報変更機能編](https://qiita.com/kaitaku/items/d7faf24a68ba933607f0)
+- [Laravelでログイン機能付きサイト作成 with XAMPP(4/4) 検索機能編](https://qiita.com/kaitaku/items/16a635e2c74af92c75e9)
+- [Laravelの認証機能をカスタマイズしてデータベースにレコードを作成する](https://qiita.com/kaitaku/items/af919955a7e8de898a20)
+- [Laravelのバリデーションにおける基礎をまとめる](https://qiita.com/kaitaku/items/503b91c40baa6ba45ec3)
+- [Laravelでuniqueの対象から自分自身の値を外す](https://qiita.com/kaitaku/items/d38e9e498b094405dede)
+- [Laravelのバリデーションでエラー時の遷移先を制御する](https://qiita.com/kaitaku/items/43584ed834853e402786)
+- [Laravelでcreateを実行してもカラムの値がNULLになってしまうときの解決策](https://qiita.com/kaitaku/items/1334f8bdd9917228c104)
+- [LaravelでSwift_TransportExceptionが発生した時の対処法(Gmail編)](https://qiita.com/kaitaku/items/66ee58c3b4ff766073ab)
+
+# Official README.md
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
@@ -62,10 +76,3 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-## Qiita articles
-- [Laravelでログイン機能付きサイト作成 with XAMPP(1/4)　基礎学習編](https://qiita.com/kaitaku/items/e3f0b144b5eb182e9681)
-- [Laravelでログイン機能付きサイト作成 with XAMPP(2/4)　認証機能の有効化編](https://qiita.com/kaitaku/items/13db4b60b7a4db6050af)
-- [Laravelでログイン機能付きサイト作成 with XAMPP(3/4) ユーザー情報変更機能編](https://qiita.com/kaitaku/items/d7faf24a68ba933607f0)
-- [Laravelでログイン機能付きサイト作成 with XAMPP(4/4) 検索機能編](https://qiita.com/kaitaku/items/16a635e2c74af92c75e9)
-- [Laravelの認証機能をカスタマイズしてデータベースにレコードを作成する](https://qiita.com/kaitaku/items/af919955a7e8de898a20)
