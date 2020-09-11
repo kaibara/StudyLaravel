@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
-            $table->string('works_id')->nullable();
+            $table->string('works_id')->nullable('false');
             $table->text('comment')->default('こんにちは!!');
             $table->timestamps();
             $table->boolean('delete_flag')->default(false);

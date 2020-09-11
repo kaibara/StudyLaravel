@@ -20,7 +20,8 @@
                                 <th>ID</th>
                                 <th>NAME</th>
                                 <th>EMAIL</th>
-                                <th>WORKS_ID</th>
+                                <th>PASSWORD</th>
+                                <th>WORKS</th>
                                 <th>COMMENT</th>
                                 <th>CREATED_AT</th>
                                 <th>UPDATED_AT</th>
@@ -30,7 +31,8 @@
                                 <td>{{ $Data['id'] }}</td>
                                 <td>{{ $Data['name'] }}</td>
                                 <td>{{ $Data['email'] }}</td>
-                                <td>{{ $Data['works_id'] }}</td>
+                                <td>{{ $Pass }}</td>
+                                <td>{{ $Name }}</td>
                                 <td>{{ $Data['comment'] }}</td>
                                 <td>{{ $Data['created_at'] }}</td>
                                 <td>{{ $Data['updated_at'] }}</td>
@@ -39,7 +41,7 @@
                         </table>
                     </div>
                     <div>
-                        <a href="{{ $Back }}">トップに戻る</a>
+                        <a href="{{ $Back }}">{{ $Message }}に戻る</a>
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -18,6 +19,13 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
+    protected function credentials(Request $request)
+    {
+        $temporary = $request->only($this->username(), 'password');
+        $temporary['delete_flag'] = 0;
+
+        return $temporary;
+    }
 
     use AuthenticatesUsers;
 

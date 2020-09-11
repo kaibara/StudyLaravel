@@ -10983,10 +10983,10 @@ table{
   padding: 0px;
 }
 
-.category, .word{
+.category, .word, .job{
   display: flex;
 }
-.category > select, .word > input{
+.category > select, .word > input, .job > select{
   margin: 0px 10px;
   height: 23px;
 }
@@ -10997,4 +10997,9 @@ table{
 
 .to_home{
   margin: 10px 0px;
+}
+
+.error{
+  color: red;
+  font-size: 15px;
 }

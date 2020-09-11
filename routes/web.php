@@ -24,9 +24,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/edit','User\EditController@edit');
 Route::post('/home/edit','User\EditController@return_check');
 Route::get('/home/edit_check','User\EditController@edit');
-Route::post('/home/edit_check','User\EditCheckController@check');
+Route::post('/home/edit_check','User\EditCheckController@edit_check');
 Route::get('/home/edit_finish','User\EditController@edit');
 Route::post('/home/edit_finish','User\EditFinishController@finish');
+
+Route::get('/home/entry','User\EntryController@entry');
+Route::post('/home/entry','User\EntryController@return_entry');
+Route::get('/home/entry_check','User\EntryController@entry');
+Route::post('/home/entry_check','User\EntryCheckController@entry_check');
+Route::get('/home/entry_finish','User\EntryController@entry');
+Route::post('/home/entry_finish','User\EntryFinishController@entry_finish');
 
 Route::get('/home/search','User\SearchController@search');
 Route::post('/home/search','User\SearchController@return_search');
@@ -44,10 +51,10 @@ Route::post('/admin/user/entry_finish','User\EntryFinishController@entry_finish'
 
 Route::get('/admin/user/edit','AdminController@admin');
 Route::post('/admin/user/edit','User\EditController@admin');
+Route::get('/admin/user/edit_check','User\EditController@admin');
+Route::post('/admin/user/edit_check','User\EditCheckController@edit_check');
 Route::post('/admin/user/edit_return','User\EditController@return_check');
-Route::get('/admin/user/edit_check','User\EditController@edit');
-Route::post('/admin/user/edit_check','User\EditCheckController@check');
-Route::get('/admin/user/edit_finish','User\EditController@edit');
+Route::get('/admin/user/edit_finish','User\EditController@admin');
 Route::post('/admin/user/edit_finish','User\EditFinishController@finish');
 
 Route::get('/admin/user/delete_check','AdminController@admin');

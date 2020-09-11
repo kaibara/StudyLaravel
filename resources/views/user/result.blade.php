@@ -15,21 +15,27 @@
                         		検索項目: {{ $Search['category'] }}
                         	</div>
                         	<div class="word">
-                        		検索ワード: {{ $Search['word'] }}
+                        		検索ワード: {{ $Search['search'] }}
                         	</div>
-                        	@if (isset($User))
+                            <?php $count=0; ?>
+                        	@if (count($User) > 0)
                         	<table>
                                 <tr>
                                     <th>ID</th>
                                     <th>NAME</th>
-                                    <th>WORKS_ID</th>
+                                    <th>WORKS</th>
                                     <th>COMMENT</th>
                                 </tr>
                                 @foreach($User as $Data)
                                 <tr>
                                     <td>{{ $Data['id'] }}</td>
                                     <td>{{ $Data['name'] }}</td>
-                                    <td>{{ $Data['works_id'] }}</td>
+                                    @if(is_array($Works)>0)
+                                        <td>{{ $Works[$count] }}</td>
+                                        <?php $count++; ?>
+                                    @else
+                                        <td>{{ $Works }}</td>
+                                    @endif
                                     <td>{{ $Data['comment'] }}</td>
                                 </tr>
                                 @endforeach    
@@ -38,13 +44,17 @@
                         	<p>検索条件に一致するユーザーは登録されていません</p>
                         	@endif
                         	<input type="hidden" value="{{ $Search['category'] }}" name="search_category" >
-                        	<input type="hidden" value="{{ $Search['word'] }}" name="search_word" >
+                        	<input type="hidden" value="{{ $Search['search'] }}" name="search_word" >
                         	<input type="submit" value="検索画面にもどる">
                             @csrf
                         </form>
                     </div>
                     <div class="to_home">
-                    	<input type="button" value="ホーム画面に戻る" onclick="location.href='/home'">
+                    	@guest
+                            <input type="button" value="ホーム画面に戻る" onclick="location.href='/'">
+                        @else
+                            <input type="button" value="ホーム画面に戻る" onclick="location.href='/home'">
+                        @endguest
                 	</div>
                 </div>
             </div>

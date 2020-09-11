@@ -4,8 +4,9 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\User;
 use Illuminate\Support\Facades\Hash;
+use App\User;
+use App\Work;
 
 class EntryFinishController extends Controller
 {
@@ -15,6 +16,8 @@ class EntryFinishController extends Controller
     	$entry_email = $request -> input('entry_email');
     	$entry_pass = $request -> input('entry_pass');
     	$entry_works_id = $request -> input('entry_works_id');
+        $works = Work::where('works_id', $entry_works_id) -> first();
+        $entry_works_name = $works['works_name'];
     	$entry_comment = $request -> input('entry_comment');
     	$entry_delete_flag = $request -> input('entry_delete_flag');
     	User::create([
@@ -27,6 +30,13 @@ class EntryFinishController extends Controller
         ]);
         $display_id = User::max('id');
         $display_data = User::where('id', $display_id) -> first();
-        return view('/user/entry_finish',['Data' => $display_data, 'Pass' => $entry_pass]);
+        if($_SERVER['REQUEST_URI'] == "/home/entry_finish"){
+            $back_action = "/";
+            $back_message = "トップ";
+        }else{
+            $back_action = "/admin";
+            $back_message = "管理画面";
+        }
+        return view('/user/entry_finish',['Data' => $display_data, 'Pass' => $entry_pass, 'Name' => $entry_works_name, 'Back' => $back_action, 'Message' => $back_message]);
     }
 }

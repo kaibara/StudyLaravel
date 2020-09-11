@@ -21,7 +21,7 @@
                     <div class="links">
                         @guest
                             <a href="{{ route('login') }}">ログイン</a>
-                            <a href="{{ route('register') }}">登録</a>
+                            <a href="home/entry">登録</a>
                             <a href="home/search">ユーザー検索</a>
                         @else
                             <a href="home/edit">ユーザー情報編集</a>

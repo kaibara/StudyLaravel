@@ -21,40 +21,40 @@
                                 <th>ID</th>
                                 <th>NAME</th>
                                 <th>EMAIL</th>
-                                <th>WORKS_ID</th>
+                                <th>WORKS</th>
                                 <th>COMMENT</th>
                                 <th>CREATED_AT</th>
                                 <th>UPDATED_AT</th>
                                 <th>DELETE_FLAG(0=表示, 1=非表示)</th>
                             </tr>
-                            @foreach($User as $Key)
+                            @for($i=0; $i < count($User); $i++)
                             <tr>
-                                <td>{{ $Key['id'] }}</td>
-                                <td>{{ $Key['name'] }}</td>
-                                <td>{{ $Key['email'] }}</td>
-                                <td>{{ $Key['works_id'] }}</td>
-                                <td>{{ $Key['comment'] }}</td>
-                                <td>{{ $Key['created_at'] }}</td>
-                                <td>{{ $Key['updated_at'] }}</td>
-                                <td>{{ $Key['delete_flag'] }}</td>
+                                <td>{{ $User[$i]['id'] }}</td>
+                                <td>{{ $User[$i]['name'] }}</td>
+                                <td>{{ $User[$i]['email'] }}</td>
+                                <td>{{ $Job[$i] }}</td>
+                                <td>{{ $User[$i]['comment'] }}</td>
+                                <td>{{ $User[$i]['created_at'] }}</td>
+                                <td>{{ $User[$i]['updated_at'] }}</td>
+                                <td>{{ $User[$i]['delete_flag'] }}</td>
                                 <td>
                                     <form action="admin/user/edit" method="POST">
-                                        <input type="hidden" value="{{ $Key['id'] }}" name="edit_id">
+                                        <input type="hidden" value="{{ $User[$i]['id'] }}" name="edit_id">
                                         <input type="submit" value="編集する">
                                         @csrf
                                     </form>
                                 </td>
-                                @if ($Key['delete_flag'] == 0)
+                                @if ($User[$i]['delete_flag'] == 0)
                                 <td>
                                     <form action="admin/user/delete_check" method="POST">
-                                        <input type="hidden" value="{{ $Key['id'] }}" name="delete_id">
+                                        <input type="hidden" value="{{ $User[$i]['id'] }}" name="delete_id">
                                         <input type="submit" value="削除する">
                                         @csrf
                                     </form>
                                 </td>
                                 @endif
                             </tr>
-                            @endforeach    
+                            @endfor    
                         </table>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                                 <td>{{ $Key['delete_flag'] }}</td>
                                 <td>
                                     <form action="admin/works/edit" method="POST">
-                                        <input type="hidden" value="{{ $Key['works_id'] }}" name="edit_works_id">
+                                        <input type="hidden" value="{{ $Key['works_id'] }}" name="edit_id">
                                         <input type="submit" value="編集する">
                                         @csrf
                                     </form>

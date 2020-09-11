@@ -4,12 +4,19 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Work;
 
 class EntryController extends Controller
 {
     public function entry()
     {
-        return view('/user/entry');
+        $works = Work::where('delete_flag',0)->get();
+        if($_SERVER['REQUEST_URI'] == "/home/entry"){
+            $back_url = "location.href='/'";
+        }else{
+            $back_url = "location.href='/admin'";
+        }
+        return view('/user/entry',['Work' => $works, 'Back' => $back_url]);
     }
 
     public function return_entry(Request $request)
@@ -26,6 +33,12 @@ class EntryController extends Controller
     		'entry_comment' => $entry_comment,
     		'entry_delete_flag' => $entry_delete_flag
     	);
-        return view('/user/entry',['Data' => $entry_data]);
+        $works = Work::where('delete_flag',0)->get();
+        if($_SERVER['REQUEST_URI'] == "/home/entry"){
+            $back_url = "location.href='/'";
+        }else{
+            $back_url = "location.href='/admin'";
+        }
+        return view('/user/entry',['Data' => $entry_data,'Work' => $works, 'Back' => $back_url]);
     }
 }

@@ -21,7 +21,8 @@
                                     <th>ID</th>
                                     <th>NAME</th>
                                     <th>EMAIL</th>
-                                    <th>WORKS_ID</th>
+                                    <th>WORKS</th>
+                                    <th>PASSWORD</th>
                                     <th>COMMENT</th>
                                     <th>CREATED_AT</th>
                                     <th>UPDATED_AT</th>
@@ -31,7 +32,8 @@
                                     <td>{{ $Data['id'] }}</td>
                                     <td>{{ $Data['name'] }}</td>
                                     <td>{{ $Data['email'] }}</td>
-                                    <td>{{ $Data['works_id'] }}</td>
+                                    <td>{{ $Data['password'] }}</td>
+                                    <td>{{ $Data['works_name'] }}</td>
                                     <td>{{ $Data['comment'] }}</td>
                                     <td>{{ $Data['created_at'] }}</td>
                                     <td>{{ $Data['updated_at'] }}</td>
@@ -40,9 +42,10 @@
                                     <input type="hidden" value="{{ $Data['id'] }}" name="edit_id">
                                     <input type="hidden" value="{{ $Data['name'] }}" name="edit_name">
                                     <input type="hidden" value="{{ $Data['email'] }}" name="edit_email">
+                                    <input type="hidden" value="{{ $Data['password'] }}" name="edit_password">
                                     <input type="hidden" value="{{ $Data['works_id'] }}" name="edit_works_id">
                                     <input type="hidden" value="{{ $Data['comment'] }}" name="edit_comment">
-                                    <input type="hidden" value="{{ $Data['delete_flag'] }}" name="edit_flag">
+                                    <input type="hidden" value="{{ $Data['delete_flag'] }}" name="edit_delete_flag">
                                 </tr>    
                             </table>
                             @csrf
@@ -53,9 +56,10 @@
                             <input type="hidden" value="{{ $Data['id'] }}" name="edit_id">
                             <input type="hidden" value="{{ $Data['name'] }}" name="edit_name">
                             <input type="hidden" value="{{ $Data['email'] }}" name="edit_email">
+                            <input type="hidden" value="{{ $Data['password'] }}" name="edit_password">
                             <input type="hidden" value="{{ $Data['works_id'] }}" name="edit_works_id">
                             <input type="hidden" value="{{ $Data['comment'] }}" name="edit_comment">
-                            <input type="hidden" value="{{ $Data['delete_flag'] }}" name="edit_flag">
+                            <input type="hidden" value="{{ $Data['delete_flag'] }}" name="edit_delete_flag">
                             <input type="submit" value="戻る">
                             @csrf
                         </form>

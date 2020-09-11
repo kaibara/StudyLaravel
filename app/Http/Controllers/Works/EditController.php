@@ -6,11 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Work;
 
+
 class EditController extends Controller
 {
     public function edit(Request $request)
-    {
-    	$edit_id = $request -> input('edit_works_id');
+    {   
+    	$edit_id = $request -> input('edit_id');
         $edit_data = Work::where('works_id', $edit_id) -> first();
         return view('works/edit',['Data' => $edit_data]);
     }

@@ -21,7 +21,7 @@
                                     <th>NAME</th>
                                     <th>EMAIL</th>
                                     <th>PASS</th>
-                                    <th>WORKS_ID</th>
+                                    <th>WORKS</th>
                                     <th>COMMENT</th>
                                     <th>DELETE_FLAG(0=表示, 1=非表示)</th>
                                 </tr>
@@ -29,7 +29,7 @@
                                     <td>{{ $Data['entry_name'] }}</td>
                                     <td>{{ $Data['entry_email'] }}</td>
                                     <td>{{ $Pass }}</td>
-                                    <td>{{ $Data['entry_works_id'] }}</td>
+                                    <td>{{ $Data['entry_works_name'] }}</td>
                                     <td>{{ $Data['entry_comment'] }}</td>
                                     <td>{{ $Data['entry_delete_flag'] }}</td>
                                     <td><input type="submit" value="ユーザーを登録する"></td>
