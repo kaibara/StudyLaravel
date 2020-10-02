@@ -14,8 +14,7 @@ Laravelの個人的な学習
 - [LaravelでSwift_TransportExceptionが発生した時の対処法(Gmail編)](https://qiita.com/kaitaku/items/66ee58c3b4ff766073ab)
 
 # Official README.md
-
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
