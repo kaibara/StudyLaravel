@@ -37,6 +37,7 @@
                         @endguest
                     </div>
                 </div>
+                <img src="{{ asset('icon.jpg') }}" alt="">
             </div>
         </div>
     </div>
