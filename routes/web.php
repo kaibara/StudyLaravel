@@ -81,3 +81,7 @@ Route::get('/admin/works/delete_check','AdminController@admin');
 Route::post('/admin/works/delete_check','Works\DeleteCheckController@delete_check');
 Route::get('/admin/works/delete_finish','AdminController@admin');
 Route::post('/admin/works/delete_finish','Works\DeleteFinishController@delete_finish');
+
+Route::get('/confirm_form/','ConfirmForm\ConfirmFormController@index');
+Route::post('/confirm_form/confirm/','ConfirmForm\ConfirmFormController@confirm');
+Route::post('/confirm_form/complete/','ConfirmForm\ConfirmFormController@complete');
