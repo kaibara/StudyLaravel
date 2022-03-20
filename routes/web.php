@@ -85,3 +85,7 @@ Route::post('/admin/works/delete_finish','Works\DeleteFinishController@delete_fi
 Route::get('/confirm_form/','ConfirmForm\ConfirmFormController@index');
 Route::post('/confirm_form/confirm/','ConfirmForm\ConfirmFormController@confirm');
 Route::post('/confirm_form/complete/','ConfirmForm\ConfirmFormController@complete');
+
+Route::get('/checkbox_search/','CheckboxSearch\CheckboxSearchController@index');
+Route::post('/checkbox_search/search/','CheckboxSearch\CheckboxSearchController@search');
+
