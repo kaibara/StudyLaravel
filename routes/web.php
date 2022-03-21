@@ -89,3 +89,6 @@ Route::post('/confirm_form/complete/','ConfirmForm\ConfirmFormController@complet
 Route::get('/checkbox_search/','CheckboxSearch\CheckboxSearchController@index');
 Route::post('/checkbox_search/search/','CheckboxSearch\CheckboxSearchController@search');
 
+Route::get('/csv/','Csv\CsvController@index')->name('csv.index');
+Route::post('/csv/finish/','Csv\CsvController@finish')->name('csv.finish');
+

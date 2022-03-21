@@ -14,6 +14,7 @@ Laravelの個人的な学習
 - [LaravelでSwift_TransportExceptionが発生した時の対処法(Gmail編)](https://qiita.com/kaitaku/items/66ee58c3b4ff766073ab)
 - [Laravelの確認画面から戻って入力画面に値を渡すシンプルな方法](https://qiita.com/kaitaku/items/55bc4e0a666669bb4b37)
 - [Laravelでチェックボックスを使用した検索フォームの作り方](https://qiita.com/kaitaku/items/7eadcc88332c337b2d5c)
+- [【Laravel】SplFileObjectでCSVファイルのデータを読み込んでDBに反映する](https://qiita.com/kaitaku/items/b85a32cec244e9fed1be)
 
 # Official README.md
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
