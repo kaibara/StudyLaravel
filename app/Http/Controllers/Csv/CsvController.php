@@ -21,7 +21,7 @@ class CsvController extends Controller
     {
 
         // ファイルバリデーション
-        $validation_array = [
+        $file_validation_array = [
             'csv_file' => [
                         'required', // 必須
                         'max:1024', // ファイルサイズ上限は設定値以下か
@@ -30,11 +30,11 @@ class CsvController extends Controller
             ],
         ];
 
-        $validator = Validator::make($request->all(), $validation_array);
+        $file_validator = Validator::make($request->all(), $file_validation_array);
 
-        if ($validator->fails()) {
+        if ($file_validator->fails()) {
             return redirect('/csv/')
-                        ->withErrors($validator);
+                        ->withErrors($file_validator);
         };
 
         //ファイル名取得
@@ -51,7 +51,7 @@ class CsvController extends Controller
           \SplFileObject::READ_AHEAD |    // 先読み／巻き戻しで読み込み
           \SplFileObject::SKIP_EMPTY |    // 空行を読み飛ばす
           \SplFileObject::DROP_NEW_LINE   // 行末の改行を読み飛ばす
-        );
+        );        
 
         // 配列に変換
         $csv_data = [];
@@ -71,7 +71,26 @@ class CsvController extends Controller
                 'age' => $value[1],
                 'email' => $value[2],
             ];
-        } 
+            
+        }
+
+        // CSVデータのバリデーション
+        $data_validation_array = [
+            '*.name' =>['required', 'string'],
+            '*.age' =>['required', 'numeric'], 
+            '*.email' =>['required', 'string'], 
+        ];
+
+        $csv_validator = Validator::make($csv_data, $data_validation_array);
+
+        if ($csv_validator->fails()) {
+
+            // CSVファイルの削除
+            Storage::delete('csv_data/'.$csv_name);
+
+            return redirect('/csv/')
+                        ->withErrors($csv_validator);
+        };
 
         // 登録処理
         DB::beginTransaction();
