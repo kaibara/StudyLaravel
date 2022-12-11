@@ -2,10 +2,10 @@
 Laravelの個人的な学習
 
 ## 起動方法
-0. `XAMPP`を起動
-0. `git bash`などのターミナルを起動
-0. `StudyLaravel`に移動
-0. `$ php artisan serve`を実行
+1. `XAMPP`を起動
+2. `git bash`などのターミナルを起動
+3. `StudyLaravel`に移動
+4. `$ php artisan serve`を実行
 
 ## Qiita articles
 - [Laravelでログイン機能付きサイト作成 with XAMPP(1/4)　基礎学習編](https://qiita.com/kaitaku/items/e3f0b144b5eb182e9681)
