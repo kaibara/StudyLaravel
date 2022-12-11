@@ -92,3 +92,6 @@ Route::post('/checkbox_search/search/','CheckboxSearch\CheckboxSearchController@
 Route::get('/csv/','Csv\CsvController@index')->name('csv.index');
 Route::post('/csv/finish/','Csv\CsvController@finish')->name('csv.finish');
 
+Route::get('/splite_blade/','SpliteBlade\SpliteBladeController@index')->name('splite_blade.index');
+Route::post('/splite_blade/ajax/','SpliteBlade\SpliteBladeController@ajax')->name('splite_blade.ajax');
+
